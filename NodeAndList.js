@@ -37,8 +37,10 @@ class LinkedList {
       return null;
     }
     if (this.head.next !== undefined) {
+      let currentHead = this.head;
+      this.head = this.head.next;
+      return currentHead;
     }
-    return this.head;
   }
 }
 

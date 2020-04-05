@@ -24,7 +24,7 @@ class LinkedList {
     if (item instanceof Node === false) {
       throw "not a node";
     }
-    if (this.head !== undefined) {
+    if (this.head !== null) {
       let tempHead = this.head;
       item.next = tempHead;
       this.head = item;
@@ -42,9 +42,24 @@ class LinkedList {
       return currentHead;
     }
   }
+
+  getLast() {
+    if (this.head.data === undefined) {
+      return null;
+    }
+
+    const originalHead = this.head;
+    let currNode = this.head;
+    while (this.head.next.data !== undefined) {
+      this.head = this.head.next;
+      currNode = this.head;
+    }
+    this.head = originalHead;
+    return currNode;
+  }
 }
 
 module.exports = {
   Node,
-  LinkedList
+  LinkedList,
 };

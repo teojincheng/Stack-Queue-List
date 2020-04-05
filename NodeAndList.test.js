@@ -46,4 +46,16 @@ describe("LinkedList", () => {
     expect(list.shift().data).toEqual("apple");
     expect(list.shift()).toEqual(null);
   });
+
+  it("getLast should get the last item", () => {
+    expect(list.getLast()).toBe(null);
+    const nodeA = new Node("apple");
+    expect(list.unshift(nodeA));
+    expect(list.getLast()).toBe(nodeA);
+    expect(list.getLast()).toBe(nodeA);
+    expect(list.unshift(new Node("banana")));
+    expect(list.getLast()).toBe(nodeA);
+    list.shift();
+    expect(list.getLast()).toBe(nodeA);
+  });
 });

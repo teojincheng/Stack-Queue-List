@@ -58,4 +58,23 @@ describe("LinkedList", () => {
     list.shift();
     expect(list.getLast()).toBe(nodeA);
   });
+
+  it("pop should remove and return last item", () => {
+    let node, nodeA, nodeB;
+    expect(list.pop()).toBe(null);
+    node = new Node("apple");
+    list.unshift(node);
+    expect(list.pop()).toEqual(node);
+    expect(list.pop()).toEqual(null);
+    node = new Node("apple");
+    nodeA = new Node("a");
+    nodeB = new Node("b");
+    list.unshift(node);
+    list.unshift(nodeA);
+    list.unshift(nodeB);
+    expect(list.pop()).toEqual(node);
+    expect(list.pop()).toEqual(nodeA);
+    expect(list.pop()).toEqual(nodeB);
+    expect(list.pop()).toEqual(null);
+  });
 });

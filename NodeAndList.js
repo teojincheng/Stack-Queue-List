@@ -57,6 +57,28 @@ class LinkedList {
     this.head = originalHead;
     return currNode;
   }
+
+  pop() {
+    if (this.head.data === undefined) {
+      return null;
+    }
+
+    if (this.head.next.data === undefined) {
+      const tempHead = this.head;
+      this.head = new Node();
+      return tempHead;
+    }
+
+    const originalHead = this.head;
+    let currNode = this.head;
+    while (this.head.next.data !== undefined) {
+      this.head = this.head.next;
+      currNode = this.head;
+      this.head = null;
+    }
+    this.head = originalHead;
+    return currNode;
+  }
 }
 
 module.exports = {

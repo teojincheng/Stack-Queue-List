@@ -66,9 +66,6 @@ describe("LinkedList", () => {
     list.unshift(node);
     expect(list.pop()).toEqual(node);
     expect(list.pop()).toEqual(null);
-
-    /*
-    
     node = new Node("apple");
     nodeA = new Node("a");
     nodeB = new Node("b");
@@ -79,6 +76,5 @@ describe("LinkedList", () => {
     expect(list.pop()).toEqual(nodeA);
     expect(list.pop()).toEqual(nodeB);
     expect(list.pop()).toEqual(null);
-    */
   });
 });

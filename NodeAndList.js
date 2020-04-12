@@ -71,11 +71,15 @@ class LinkedList {
 
     const originalHead = this.head;
     let currNode = this.head;
+    let prevNode = this.head;
+    //this loop is to get to the last item in the linked list.
     while (this.head.next.data !== undefined) {
+      prevNode = this.head;
       this.head = this.head.next;
       currNode = this.head;
-      this.head = null;
     }
+    //this.head = new Node();
+    prevNode.next = new Node();
     this.head = originalHead;
     return currNode;
   }

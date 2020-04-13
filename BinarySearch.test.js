@@ -29,9 +29,8 @@ describe("binary search by sorted id", () => {
       data[data.length - 1]
     );
   });
-  /*
+
   it("return null if item does not exist", () => {
     expect(binarySearch(data, 0)).toEqual(null);
   });
-  */
 });
